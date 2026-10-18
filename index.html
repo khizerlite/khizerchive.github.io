@@ -1,162 +1,437 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khizer — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khizer Hayat — Autonomous AI Agents & SaaS Tech Video Production</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Khizer Hayat — Autonomous AI Agents & SaaS Tech Video Production">
+  <meta name="description" content="Portfolio of Khizer Hayat (khizerchive). Building autonomous AI agents, Python pipelines, and high-retention SaaS video walkthroughs.">
+  <meta name="keywords" content="Khizer Hayat, khizerchive, AI Agents, SaaS Video Production, Premiere Pro, After Effects, Arch Linux, Python">
+  <meta name="author" content="Khizer Hayat">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://khizerchive.tech">
+  <meta property="og:title" content="Khizer Hayat — Autonomous AI Agents & SaaS Video">
+  <meta property="og:description" content="Bridging software engineering, autonomous LLM agents, and SaaS video production.">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@khizerchive">
+  <meta name="twitter:creator" content="@khizerchive">
+  <meta name="twitter:title" content="Khizer Hayat | Khizerchive">
+  <meta name="twitter:description" content="Autonomous AI systems and SaaS video demo production.">
+
+  <!-- Tailwind CSS CDN with dark mode configured -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.04em',
+            tight: '-0.02em',
+            widest: '0.12em',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     body {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'Space Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    ::selection {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+
+    .arch-img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      filter: grayscale(10%) contrast(102%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    }
+    .group:hover .arch-img {
+      transform: scale(1.025);
+      filter: grayscale(0%) contrast(105%);
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-track {
+      display: flex;
+      width: 200%;
+      animation: marquee 20s linear infinite;
+    }
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #737373;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
     }
   </style>
+
+  <script>
+    if (localStorage.theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
-<body class="bg-[#0b0c10] text-[#c5c6c7] antialiased selection:bg-[#45a29e] selection:text-black min-h-screen p-6 sm:p-12 md:p-20">
 
-  <div class="max-w-3xl mx-auto space-y-20">
+<body class="bg-white text-neutral-900 dark:bg-[#0a0a0a] dark:text-[#f3f4f6] min-h-screen relative antialiased">
 
-    <!-- Navbar -->
-    <nav class="flex items-center justify-between border-b border-[#1f2833] pb-6 text-xs uppercase tracking-wider">
-      <span class="text-white font-medium">khizerchive</span>
-      <div class="flex items-center space-x-6 text-[#45a29e]">
-        <a href="#about" class="hover:text-[#66fcf1] transition-colors">About</a>
-        <a href="#capabilities" class="hover:text-[#66fcf1] transition-colors">Stack</a>
-        <a href="#projects" class="hover:text-[#66fcf1] transition-colors">Projects</a>
-        <a href="#contact" class="hover:text-[#66fcf1] transition-colors">Contact</a>
+  <!-- Top Infinite Marquee / Slider Banner -->
+  <div class="w-full overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 py-2 select-none text-[11px] font-mono tracking-widest uppercase">
+    <div class="ticker-track flex whitespace-nowrap">
+      <span class="text-neutral-500 dark:text-neutral-400 px-6">
+        AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp; AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp;
+      </span>
+      <span class="text-neutral-500 dark:text-neutral-400 px-6">
+        AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp; AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="w-full max-w-7xl mx-auto px-6 sm:px-12 pt-8 pb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 tracking-wider text-xs">
+    <div>
+      <span class="font-bold tracking-widest uppercase cursor-default">khizerchive</span>
+    </div>
+
+    <div class="flex items-center gap-6 sm:gap-8">
+      <nav class="flex items-center gap-5 sm:gap-7 text-xs uppercase">
+        <a href="#work" class="hover:text-blue-500 transition-colors tracking-wide">[WORK]</a>
+        <a href="#about" class="hover:text-blue-500 transition-colors tracking-wide">[ABOUT]</a>
+        <a href="#contact" class="hover:text-blue-500 transition-colors tracking-wide">[CONTACT]</a>
+      </nav>
+
+      <!-- Minimal Theme Toggle Button -->
+      <button onclick="toggleTheme()" class="px-2.5 py-1 border border-neutral-300 dark:border-neutral-800 hover:border-neutral-500 dark:hover:border-neutral-600 transition-colors uppercase text-[11px] flex items-center gap-1.5" title="Toggle Theme">
+        <span id="theme-icon">◐</span>
+        <span id="theme-text">[THEME]</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-6 sm:px-12 pt-14 sm:pt-24 pb-20 sm:pb-32">
+    <div class="max-w-4xl space-y-6 sm:space-y-8">
+      
+      <div class="text-xs sm:text-[13px] tracking-widest text-neutral-500 dark:text-neutral-400 uppercase">
+        [AI AGENTS / PIPELINES / VIDEO PRODUCTION]
       </div>
-    </nav>
 
-    <!-- Header / Intro -->
-    <header class="space-y-3">
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2 h-2 rounded-full bg-[#66fcf1] animate-pulse"></span>
-        <span class="text-xs uppercase tracking-widest text-[#66fcf1]">Available for projects</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight">Khizer Hayat</h1>
-      <p class="text-sm text-[#45a29e]">Developer & Digital Builder</p>
-    </header>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase leading-[1.08]">
+        AUTONOMOUS AGENTS<br>&amp; TECHNICAL MEDIA
+      </h1>
 
-    <!-- 01. About -->
-    <section id="about" class="space-y-4">
-      <h2 class="text-xs uppercase tracking-widest text-[#66fcf1]">[ 01. About ]</h2>
-      <p class="text-sm sm:text-base leading-relaxed text-[#c5c6c7]">
-        Building web interfaces, automation pipelines, and digital tools with a focus on speed, utility, and clean architecture. Focused on shipping lightweight, functional software.
+      <p class="text-xs sm:text-sm md:text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-2xl tracking-normal">
+        Developing autonomous LLM agent pipelines, software interfaces, and high-retention video walkthroughs for SaaS products.
       </p>
-    </section>
 
-    <!-- 02. Capabilities & Stack -->
-    <section id="capabilities" class="space-y-4">
-      <h2 class="text-xs uppercase tracking-widest text-[#66fcf1]">[ 02. Capabilities & Stack ]</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs sm:text-sm">
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Languages</span>
-          JavaScript, Python, HTML5, CSS3
-        </div>
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Frameworks</span>
-          Tailwind CSS, React, Next.js
-        </div>
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Tools & Deploy</span>
-          Git, GitHub, Vercel, Linux
-        </div>
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Systems</span>
-          REST APIs, Automation, Scripting
-        </div>
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Design</span>
-          Figma, Minimal UI, Responsive Layouts
-        </div>
-        <div class="border border-[#1f2833] p-3 rounded bg-[#12141a]">
-          <span class="text-[#66fcf1] block mb-1">Pipelines</span>
-          Prompt Engineering, Asset Generation
-        </div>
+      <div class="pt-4 sm:pt-6 flex items-center gap-4 text-xs tracking-widest text-neutral-500 dark:text-neutral-400 uppercase">
+        <span class="text-neutral-400 dark:text-neutral-600">[01]</span>
+        <a href="#work" class="hover:text-blue-500 transition-colors flex items-center gap-1">
+          <span>[VIEW WORK]</span>
+        </a>
       </div>
-    </section>
 
-    <!-- 03. Selected Projects (No external redirects) -->
-    <section id="projects" class="space-y-4">
-      <h2 class="text-xs uppercase tracking-widest text-[#66fcf1]">[ 03. Selected Projects ]</h2>
-      <div class="space-y-3">
-        
-        <!-- Project 1 -->
-        <div class="border border-[#1f2833] p-4 rounded bg-[#12141a] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-medium text-white">Portfolio Platform</span>
-              <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#1f2833] text-[#45a29e]">Production</span>
-            </div>
-            <p class="text-xs text-stone-400 mt-1">Lightweight static portfolio site running on custom DNS and edge CDN.</p>
+    </div>
+  </section>
+
+  <!-- Selected Projects (#work) -->
+  <section id="work" class="max-w-7xl mx-auto px-6 sm:px-12 pt-16 pb-28 border-t border-neutral-200 dark:border-neutral-900">
+    <div class="mb-12 sm:mb-16">
+      <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[02]</div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight uppercase">
+        SELECTED PROJECTS &amp; STACK
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 sm:gap-y-16">
+      
+      <!-- Project 01 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://i.ibb.co/1tLtr2kQ/image.png" alt="Autonomous AI Workflow Architecture" class="w-full arch-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85'">
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            AGENTIC REASONING ENGINE
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[PYTHON / LLM INTEGRATION]</span>
+            <span>2026</span>
           </div>
-          <span class="text-xs text-[#66fcf1] font-mono shrink-0">[Live Domain]</span>
         </div>
+      </article>
 
-        <!-- Project 2 -->
-        <div class="border border-[#1f2833] p-4 rounded bg-[#12141a] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-medium text-white">Automation Pipeline</span>
-              <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#1f2833] text-[#45a29e]">In Progress</span>
-            </div>
-            <p class="text-xs text-stone-400 mt-1">Directory scraper and outreach messaging workflows for creator channels.</p>
+      <!-- Project 02 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="SaaS Video Walkthrough Demo" class="w-full arch-img" loading="lazy">
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            SAAS PRODUCT WALKTHROUGH
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[PREMIERE &amp; AFTER EFFECTS]</span>
+            <span>2026</span>
           </div>
-          <span class="text-xs text-stone-500 font-mono shrink-0">[Internal]</span>
         </div>
+      </article>
 
-        <!-- Project 3 -->
-        <div class="border border-[#1f2833] p-4 rounded bg-[#12141a] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-sm font-medium text-white">AI Content Generator</span>
-              <span class="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#1f2833] text-[#45a29e]">Active</span>
-            </div>
-            <p class="text-xs text-stone-400 mt-1">Script prompt tooling and voice configuration pipelines for animated shorts.</p>
+      <!-- Project 03 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Linux Arch Environment Automation" class="w-full arch-img" loading="lazy">
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            DEV ENVIRONMENT &amp; AUTOMATION
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[ARCH LINUX / N8N]</span>
+            <span>2025</span>
           </div>
-          <span class="text-xs text-stone-500 font-mono shrink-0">[Private Repo]</span>
         </div>
+      </article>
 
-      </div>
-    </section>
-
-    <!-- 04. Experience / Focus -->
-    <section class="space-y-4">
-      <h2 class="text-xs uppercase tracking-widest text-[#66fcf1]">[ 04. Focus & Workflow ]</h2>
-      <div class="border border-[#1f2833] p-4 rounded bg-[#12141a] space-y-2 text-xs sm:text-sm">
-        <div class="flex justify-between items-center text-white">
-          <span>Independent Technical Projects</span>
-          <span class="text-stone-500 font-mono text-xs">2024 — Present</span>
+      <!-- Project 04 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="UI UX Web System Design" class="w-full arch-img" loading="lazy">
         </div>
-        <p class="text-xs text-stone-400">
-          Focusing on full-stack web basics, automated workflows, and digital media production pipelines.
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            CUSTOM SOFTWARE INTERFACES
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[FULL-STACK &amp; UI/UX]</span>
+            <span>2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 05 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Commercial Promo Motion Graphics" class="w-full arch-img" loading="lazy">
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            COMMERCIAL MOTION GRAPHICS
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[MOTION DESIGN]</span>
+            <span>2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 06 -->
+      <article class="group flex flex-col select-none">
+        <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="API Pipelines and Transcoding Infrastructure" class="w-full arch-img" loading="lazy">
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+            API &amp; TRANSCODING INFRASTRUCTURE
+          </h3>
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
+            <span>[SYSTEM ARCHITECTURE]</span>
+            <span>2024</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About Section (#about) - Preserved in full -->
+  <section id="about" class="max-w-7xl mx-auto px-6 sm:px-12 pt-20 pb-28 border-t border-neutral-200 dark:border-neutral-900">
+    <div class="mb-12 sm:mb-16">
+      <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[03]</div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight uppercase">
+        ABOUT &amp; CAPABILITIES
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      
+      <!-- Bio Narrative -->
+      <div class="lg:col-span-6 space-y-6 text-xs sm:text-[13px] leading-relaxed text-neutral-700 dark:text-neutral-300">
+        <p>
+          Most developers don't understand post-production, and most video editors don't build software or automate workflows. I combine both worlds to help founders, tech teams, and SaaS platforms build autonomous AI systems and showcase them with high-retention video content.
+        </p>
+        <p>
+          My workflow centers on building scalable LLM agent integrations, constructing robust system tools on Arch Linux, and crafting high-fidelity product walkthroughs that turn technical complexity into clear conversion drivers.
         </p>
       </div>
-    </section>
 
-    <!-- 05. Contact -->
-    <section id="contact" class="space-y-4">
-      <h2 class="text-xs uppercase tracking-widest text-[#66fcf1]">[ 05. Contact ]</h2>
-      <div class="border border-[#1f2833] p-5 rounded bg-[#12141a] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <!-- Details Column -->
+      <div class="lg:col-span-6 space-y-10 text-xs sm:text-[13px]">
+        
+        <!-- Education -->
         <div>
-          <p class="text-sm text-white font-medium">Ready to collaborate?</p>
-          <p class="text-xs text-stone-400 mt-0.5">Reach out via email or connect on GitHub.</p>
+          <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">[EDUCATION]</div>
+          <div class="space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span>UNIVERSITY OF SOUTH ASIA</span>
+              <span class="text-neutral-400 dark:text-neutral-500">/ PAKISTAN</span>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-3">
-          <span class="text-xs text-[#66fcf1] border border-[#1f2833] px-3 py-1.5 rounded cursor-default">contact@khizerchive.tech</span>
+
+        <!-- Tech Stack -->
+        <div>
+          <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">[CORE TECH STACK]</div>
+          <div class="space-y-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span>LINUX (ARCH), PYTHON, LLM AGENTS, API ARCHITECTURE</span>
+              <span class="text-neutral-400 dark:text-neutral-500">/ CODE</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span>ADOBE PREMIERE PRO, AFTER EFFECTS, MOTION GRAPHICS</span>
+              <span class="text-neutral-400 dark:text-neutral-500">/ MEDIA</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span>N8N, MAKE, TRANSCODING &amp; DEBUGGING PIPELINES</span>
+              <span class="text-neutral-400 dark:text-neutral-500">/ AUTOMATION</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Partners -->
+        <div>
+          <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">[COLLABORATION]</div>
+          <div class="space-y-2">
+            <div>SAAS FOUNDERS &amp; TECH TEAMS (PRODUCT DEMOS &amp; PROMOS)</div>
+            <div>BUSINESSES AUTOMATING REPETITIVE WORKFLOWS WITH AI</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (#contact) -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 sm:px-12 pt-20 pb-24 border-t border-neutral-200 dark:border-neutral-900">
+    <div class="mb-12 sm:mb-16">
+      <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[04]</div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight uppercase">
+        GET IN TOUCH
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+      
+      <!-- Inquiry Details -->
+      <div class="lg:col-span-7 space-y-6 text-xs sm:text-[13px]">
+        <p class="leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-lg">
+          Available for technical workflows, autonomous pipelines, and demo production.
+        </p>
+
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="mail" class="w-4 h-4 text-neutral-500"></i>
+            <span class="font-bold tracking-wider uppercase text-neutral-900 dark:text-neutral-100">
+              KHIZERHAYAT.EXE@GMAIL.COM
+            </span>
+          </div>
+
+          <div class="text-neutral-500 dark:text-neutral-400 tracking-wider uppercase">
+            LAHORE, PAKISTAN
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Social Links (neutralized - non-redirecting) -->
+      <div class="lg:col-span-5 text-xs sm:text-[13px]">
+        <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">[CONNECT]</div>
+        <div class="space-y-3 uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+          <div class="flex items-center gap-2">
+            <i data-lucide="linkedin" class="w-4 h-4 text-neutral-500"></i>
+            <span>LINKEDIN (@CREATEDBYKHIZER)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="github" class="w-4 h-4 text-neutral-500"></i>
+            <span>GITHUB (@KHIZERLITE)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="instagram" class="w-4 h-4 text-neutral-500"></i>
+            <span>INSTAGRAM (@KHIZERCHIVE)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="twitter" class="w-4 h-4 text-neutral-500"></i>
+            <span>TWITTER / X (@KHIZERCHIVE)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <!-- Footer -->
-    <footer class="pt-10 border-t border-[#1f2833] flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-2">
-      <span>khizerchive.tech</span>
-      <span>all systems operational // 2026</span>
+    <footer class="mt-24 pt-10 border-t border-neutral-200 dark:border-neutral-900 text-xs text-neutral-400 dark:text-neutral-500 tracking-wider uppercase flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div>
+        © 2026 KHIZER HAYAT. ALL RIGHTS RESERVED.
+      </div>
+      <div>
+        <a href="#" class="hover:text-blue-500 transition-colors">[BACK TO TOP ↑]</a>
+      </div>
     </footer>
+  </section>
 
-  </div>
+  <!-- Script Logic -->
+  <script>
+    lucide.createIcons();
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    }
+  </script>
 
 </body>
 </html>
