@@ -79,17 +79,29 @@
       filter: grayscale(0%) contrast(106%);
     }
 
-    /* Marquee / Slider Track Animation */
+    /* Truly Seamless Infinite Marquee */
     @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
     }
-    .ticker-track {
+    .marquee-wrapper {
       display: flex;
-      width: 200%;
-      animation: marquee 22s linear infinite;
+      overflow: hidden;
+      user-select: none;
     }
-    .ticker-track:hover {
+    .marquee-content {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-around;
+      min-width: 100%;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-content {
       animation-play-state: paused;
     }
 
@@ -118,15 +130,30 @@
 
 <body class="bg-white text-neutral-900 dark:bg-[#0a0a0a] dark:text-[#f3f4f6] min-h-screen relative antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Top Infinite Marquee / Slider Banner -->
-  <div class="w-full overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 py-2 select-none text-[11px] font-mono tracking-widest uppercase">
-    <div class="ticker-track flex whitespace-nowrap">
-      <span class="text-neutral-500 dark:text-neutral-400 px-6">
-        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a> &nbsp;&bull;&nbsp; AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a> &nbsp;&bull;&nbsp;
+  <!-- Seamless Infinite Marquee Banner -->
+  <div class="marquee-wrapper w-full border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 py-2 text-[11px] font-mono tracking-widest uppercase">
+    <!-- Track 1 -->
+    <div class="marquee-content" aria-hidden="false">
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a>
       </span>
-      <span class="text-neutral-500 dark:text-neutral-400 px-6">
-        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a> &nbsp;&bull;&nbsp; AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a> &nbsp;&bull;&nbsp;
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AUTONOMOUS AI AGENTS &bull; SAAS VIDEO PRODUCTION &bull; PYTHON &amp; LINUX PIPELINES
       </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+    </div>
+
+    <!-- Track 2 (Duplicate Follower) -->
+    <div class="marquee-content" aria-hidden="true">
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a>
+      </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AUTONOMOUS AI AGENTS &bull; SAAS VIDEO PRODUCTION &bull; PYTHON &amp; LINUX PIPELINES
+      </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
     </div>
   </div>
 
@@ -179,7 +206,7 @@
       </h1>
 
       <p class="text-xs sm:text-sm md:text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-2xl tracking-normal">
-        I bridge the gap between building custom software, automating workflows with autonomous LLM agents, and producing high-converting tech video assets for SaaS founders.
+        I bridge the gap between building custom software, automating workflows with autonomous LLM agents, and producing high-converting tech video assets for SaaS founders[cite: 5, 10].
       </p>
 
       <div class="pt-4 sm:pt-6 flex flex-wrap items-center gap-5 text-xs tracking-widest uppercase">
@@ -188,7 +215,7 @@
           <span>[WATCH INTRO REEL]</span>
         </a>
         <a href="#work" class="hover:text-blue-500 transition-colors flex items-center gap-1.5">
-          <span>[VIEW CODE & WORK]</span>
+          <span>[VIEW CODE &amp; WORK]</span>
           <span>&darr;</span>
         </a>
       </div>
@@ -202,24 +229,22 @@
       <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-2">[01]</div>
       <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">
-          DEMO & INTRO REEL
+          DEMO &amp; INTRO REEL
         </h2>
         <span class="text-[11px] font-mono text-neutral-500 tracking-wider">[4K / HIGH-RETENTION CUT]</span>
       </div>
     </div>
 
-    <!-- Video Container with Poster Fallback & Instant Start -->
+    <!-- Video Container -->
     <div class="relative w-full aspect-video bg-neutral-950 border border-neutral-200 dark:border-neutral-800 overflow-hidden group">
-      <!-- Direct HTML5 video configured for ultra-fast load without background memory drain -->
       <video 
         id="introVideo"
         class="w-full h-full object-cover"
         controls
         preload="metadata"
         playsinline
-        poster="https://i.ibb.co/1tLtr2kQ/image.png"
+        poster="https://i.ibb.co/F4KqxqrN/image.png"
       >
-        <!-- Replace src with your compressed video URL (e.g., https://yourdomain.com/intro.mp4 or Streamable link) -->
         <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-34384-large.mp4" type="video/mp4">
         Your browser does not support HTML5 video playback.
       </video>
