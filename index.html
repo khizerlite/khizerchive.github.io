@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khizer Hayat — Autonomous AI Agents & SaaS Tech Video Production</title>
   
+  <!-- Brutalist SVG Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22monospace%22 fill=%22%233b82f6%22>&gt;_</text></svg>">
+
   <!-- Primary Meta Tags -->
   <meta name="title" content="Khizer Hayat — Autonomous AI Agents & SaaS Tech Video Production">
   <meta name="description" content="Portfolio of Khizer Hayat (khizerchive). Building autonomous AI agents, Python pipelines, and high-retention SaaS video walkthroughs.">
@@ -14,7 +17,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://khizerchive.tech">
+  <meta property="og:url" content="https://khizerlite.github.io/khizerchive.github.io/">
   <meta property="og:title" content="Khizer Hayat — Autonomous AI Agents & SaaS Video">
   <meta property="og:description" content="Bridging software engineering, autonomous LLM agents, and SaaS video production.">
 
@@ -69,23 +72,36 @@
       aspect-ratio: 16 / 9;
       object-fit: cover;
       filter: grayscale(10%) contrast(102%);
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
     }
     .group:hover .arch-img {
-      transform: scale(1.025);
-      filter: grayscale(0%) contrast(105%);
+      transform: scale(1.02);
+      filter: grayscale(0%) contrast(106%);
     }
 
+    /* Truly Seamless Infinite Marquee */
     @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
     }
-    .ticker-track {
+    .marquee-wrapper {
       display: flex;
-      width: 200%;
-      animation: marquee 20s linear infinite;
+      overflow: hidden;
+      user-select: none;
     }
-    .ticker-track:hover {
+    .marquee-content {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: space-around;
+      min-width: 100%;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-wrapper:hover .marquee-content {
       animation-play-state: paused;
     }
 
@@ -112,28 +128,44 @@
   </script>
 </head>
 
-<body class="bg-white text-neutral-900 dark:bg-[#0a0a0a] dark:text-[#f3f4f6] min-h-screen relative antialiased">
+<body class="bg-white text-neutral-900 dark:bg-[#0a0a0a] dark:text-[#f3f4f6] min-h-screen relative antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- Top Infinite Marquee / Slider Banner -->
-  <div class="w-full overflow-hidden border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 py-2 select-none text-[11px] font-mono tracking-widest uppercase">
-    <div class="ticker-track flex whitespace-nowrap">
-      <span class="text-neutral-500 dark:text-neutral-400 px-6">
-        AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp; AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp;
+  <!-- Seamless Infinite Marquee Banner -->
+  <div class="marquee-wrapper w-full border-b border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-950 py-2 text-[11px] font-mono tracking-widest uppercase">
+    <!-- Track 1 -->
+    <div class="marquee-content" aria-hidden="false">
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a>
       </span>
-      <span class="text-neutral-500 dark:text-neutral-400 px-6">
-        AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp; AVAILABLE FOR ACTIVE PROJECTS &nbsp;|&nbsp; KHIZERHAYAT.EXE@GMAIL.COM &nbsp;&bull;&nbsp;
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AUTONOMOUS AI AGENTS &bull; SAAS VIDEO PRODUCTION &bull; PYTHON &amp; LINUX PIPELINES
       </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+    </div>
+
+    <!-- Track 2 (Duplicate Follower) -->
+    <div class="marquee-content" aria-hidden="true">
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AVAILABLE FOR Q4 / 2026 PROJECTS &nbsp;|&nbsp; CONTACT: <a href="mailto:khizerhayat.exe@gmail.com" class="text-neutral-800 dark:text-neutral-200 hover:text-blue-500 transition-colors">KHIZERHAYAT.EXE@GMAIL.COM</a>
+      </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
+      <span class="px-6 text-neutral-500 dark:text-neutral-400">
+        AUTONOMOUS AI AGENTS &bull; SAAS VIDEO PRODUCTION &bull; PYTHON &amp; LINUX PIPELINES
+      </span>
+      <span class="px-4 text-neutral-400 dark:text-neutral-600">&bull;</span>
     </div>
   </div>
 
   <!-- Header Navigation -->
   <header class="w-full max-w-7xl mx-auto px-6 sm:px-12 pt-8 pb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 tracking-wider text-xs">
     <div>
-      <span class="font-bold tracking-widest uppercase cursor-default">khizerchive</span>
+      <a href="#" class="font-bold tracking-widest uppercase hover:opacity-60 transition-opacity">khizerchive</a>
     </div>
 
     <div class="flex items-center gap-6 sm:gap-8">
       <nav class="flex items-center gap-5 sm:gap-7 text-xs uppercase">
+        <a href="#reel" class="hover:text-blue-500 transition-colors tracking-wide">[REEL]</a>
         <a href="#work" class="hover:text-blue-500 transition-colors tracking-wide">[WORK]</a>
         <a href="#about" class="hover:text-blue-500 transition-colors tracking-wide">[ABOUT]</a>
         <a href="#contact" class="hover:text-blue-500 transition-colors tracking-wide">[CONTACT]</a>
@@ -148,32 +180,75 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-6 sm:px-12 pt-14 sm:pt-24 pb-20 sm:pb-32">
+  <section class="max-w-7xl mx-auto px-6 sm:px-12 pt-14 sm:pt-20 pb-16 sm:pb-24">
     <div class="max-w-4xl space-y-6 sm:space-y-8">
       
+      <!-- System Micro Status Badge -->
+      <div class="flex flex-wrap items-center gap-2 text-[10px] tracking-widest text-neutral-500 dark:text-neutral-400 uppercase font-mono">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          SYS: ARCH LINUX (x86_64)
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900">
+          PIPELINE: ACTIVE
+        </span>
+        <span class="hidden sm:inline-flex items-center px-2 py-0.5 border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900">
+          NODE: PK_LHR
+        </span>
+      </div>
+
       <div class="text-xs sm:text-[13px] tracking-widest text-neutral-500 dark:text-neutral-400 uppercase">
-        [AI AGENTS / PIPELINES / VIDEO PRODUCTION]
+        [ENGINEERING AI AGENTS / SAAS VIDEO PRODUCTION]
       </div>
 
       <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase leading-[1.08]">
-        AUTONOMOUS AGENTS<br>&amp; TECHNICAL MEDIA
+        AUTONOMOUS AGENTS<br>&amp; HIGH-RETENTION MEDIA
       </h1>
 
       <p class="text-xs sm:text-sm md:text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-2xl tracking-normal">
-        Developing autonomous LLM agent pipelines, software interfaces, and high-retention video walkthroughs for SaaS products.
+        I bridge the gap between building custom software, automating workflows with autonomous LLM agents, and producing high-converting tech video assets for SaaS founders[cite: 5].
       </p>
 
-      <div class="pt-4 sm:pt-6 flex items-center gap-4 text-xs tracking-widest text-neutral-500 dark:text-neutral-400 uppercase">
-        <span class="text-neutral-400 dark:text-neutral-600">[01]</span>
-        <a href="#work" class="hover:text-blue-500 transition-colors flex items-center gap-1">
-          <span>[VIEW WORK]</span>
+      <div class="pt-4 sm:pt-6 flex flex-wrap items-center gap-5 text-xs tracking-widest uppercase">
+        <a href="#reel" class="px-4 py-2 bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950 font-bold hover:opacity-80 transition-opacity flex items-center gap-2">
+          <i data-lucide="play" class="w-3.5 h-3.5"></i>
+          <span>[WATCH INTRO REEL]</span>
+        </a>
+        <a href="#work" class="hover:text-blue-500 transition-colors flex items-center gap-1.5">
+          <span>[VIEW CODE &amp; WORK]</span>
+          <span>&darr;</span>
         </a>
       </div>
 
     </div>
   </section>
 
-  <!-- Selected Projects (#work) -->
+  <!-- Showcase Video / Showreel Section (#reel) -->
+  <section id="reel" class="max-w-7xl mx-auto px-6 sm:px-12 pt-16 pb-20 border-t border-neutral-200 dark:border-neutral-900">
+    <div class="mb-8">
+      <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-2">[01]</div>
+      <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">
+          DEMO &amp; INTRO REEL
+        </h2>
+        <span class="text-[11px] font-mono text-neutral-500 tracking-wider">[SAAS &amp; TECH POST-PRODUCTION]</span>
+      </div>
+    </div>
+
+    <!-- Video Container (YouTube Embed) -->
+    <div class="relative w-full aspect-video bg-neutral-950 border border-neutral-200 dark:border-neutral-800 overflow-hidden group">
+      <iframe 
+        class="w-full h-full border-0"
+        src="https://www.youtube-nocookie.com/embed/V5nZfj2NHao?rel=0&modestbranding=1" 
+        title="Khizer Hayat — Intro Reel"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Selected Projects (#work) — Static Cards -->
   <section id="work" class="max-w-7xl mx-auto px-6 sm:px-12 pt-16 pb-28 border-t border-neutral-200 dark:border-neutral-900">
     <div class="mb-12 sm:mb-16">
       <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[02]</div>
@@ -185,12 +260,12 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 sm:gap-y-16">
       
       <!-- Project 01 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
-          <img src="https://i.ibb.co/1tLtr2kQ/image.png" alt="Autonomous AI Workflow Architecture" class="w-full arch-img" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=85'">
+          <img src="https://i.ibb.co/F4KqxqrN/image.png" alt="Autonomous AI Workflow Architecture" class="w-full arch-img" loading="lazy" onerror="this.src='https://i.ibb.co/1tLtr2kQ/image.png'">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+          <h3 class="font-bold tracking-wider uppercase">
             AGENTIC REASONING ENGINE
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
@@ -201,12 +276,12 @@
       </article>
 
       <!-- Project 02 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
           <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="SaaS Video Walkthrough Demo" class="w-full arch-img" loading="lazy">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+          <h3 class="font-bold tracking-wider uppercase">
             SAAS PRODUCT WALKTHROUGH
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
@@ -217,12 +292,12 @@
       </article>
 
       <!-- Project 03 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
           <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Linux Arch Environment Automation" class="w-full arch-img" loading="lazy">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+          <h3 class="font-bold tracking-wider uppercase">
             DEV ENVIRONMENT &amp; AUTOMATION
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
@@ -233,12 +308,12 @@
       </article>
 
       <!-- Project 04 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
           <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="UI UX Web System Design" class="w-full arch-img" loading="lazy">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
+          <h3 class="font-bold tracking-wider uppercase">
             CUSTOM SOFTWARE INTERFACES
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
@@ -249,29 +324,29 @@
       </article>
 
       <!-- Project 05 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
           <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Commercial Promo Motion Graphics" class="w-full arch-img" loading="lazy">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
-            COMMERCIAL MOTION GRAPHICS
+          <h3 class="font-bold tracking-wider uppercase">
+            HIGH-CONVERTING COMMERCIAL ADS
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
-            <span>[MOTION DESIGN]</span>
+            <span>[MOTION GRAPHICS]</span>
             <span>2025</span>
           </div>
         </div>
       </article>
 
       <!-- Project 06 -->
-      <article class="group flex flex-col select-none">
+      <article class="group flex flex-col">
         <div class="w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 mb-4 border border-neutral-200 dark:border-neutral-800">
           <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="API Pipelines and Transcoding Infrastructure" class="w-full arch-img" loading="lazy">
         </div>
         <div class="space-y-1.5 text-xs">
-          <h3 class="font-bold tracking-wider uppercase group-hover:text-blue-500 transition-colors">
-            API &amp; TRANSCODING INFRASTRUCTURE
+          <h3 class="font-bold tracking-wider uppercase">
+            API PIPELINES &amp; TRANSCODING
           </h3>
           <div class="text-neutral-500 dark:text-neutral-400 tracking-widest flex items-center justify-between">
             <span>[SYSTEM ARCHITECTURE]</span>
@@ -283,7 +358,7 @@
     </div>
   </section>
 
-  <!-- About Section (#about) - Preserved in full -->
+  <!-- About Section (#about) -->
   <section id="about" class="max-w-7xl mx-auto px-6 sm:px-12 pt-20 pb-28 border-t border-neutral-200 dark:border-neutral-900">
     <div class="mb-12 sm:mb-16">
       <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[03]</div>
@@ -297,10 +372,10 @@
       <!-- Bio Narrative -->
       <div class="lg:col-span-6 space-y-6 text-xs sm:text-[13px] leading-relaxed text-neutral-700 dark:text-neutral-300">
         <p>
-          Most developers don't understand post-production, and most video editors don't build software or automate workflows. I combine both worlds to help founders, tech teams, and SaaS platforms build autonomous AI systems and showcase them with high-retention video content.
+          Most developers don't understand post-production, and most video editors don't build software or automate workflows[cite: 5]. I combine both worlds to help founders, tech teams, and SaaS platforms build autonomous AI systems and showcase them with high-retention video content[cite: 5].
         </p>
         <p>
-          My workflow centers on building scalable LLM agent integrations, constructing robust system tools on Arch Linux, and crafting high-fidelity product walkthroughs that turn technical complexity into clear conversion drivers.
+          My workflow centers on building scalable LLM agent integrations, constructing robust system tools on Arch Linux, and crafting high-fidelity product walkthroughs that turn technical complexity into clear conversion drivers[cite: 5].
         </p>
       </div>
 
@@ -341,8 +416,8 @@
         <div>
           <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-3">[COLLABORATION]</div>
           <div class="space-y-2">
-            <div>SAAS FOUNDERS &amp; TECH TEAMS (PRODUCT DEMOS &amp; PROMOS)</div>
-            <div>BUSINESSES AUTOMATING REPETITIVE WORKFLOWS WITH AI</div>
+            <div>SAAS FOUNDERS &amp; TECH TEAMS (PRODUCT DEMOS &amp; PROMOS)[cite: 5]</div>
+            <div>BUSINESSES AUTOMATING REPETITIVE WORKFLOWS WITH AI[cite: 5]</div>
           </div>
         </div>
 
@@ -350,7 +425,7 @@
     </div>
   </section>
 
-  <!-- Contact Section (#contact) -->
+  <!-- Contact Section (#contact) — Clickable Socials -->
   <section id="contact" class="max-w-7xl mx-auto px-6 sm:px-12 pt-20 pb-24 border-t border-neutral-200 dark:border-neutral-900">
     <div class="mb-12 sm:mb-16">
       <div class="text-xs tracking-widest text-neutral-400 dark:text-neutral-500 uppercase mb-3">[04]</div>
@@ -364,15 +439,20 @@
       <!-- Inquiry Details -->
       <div class="lg:col-span-7 space-y-6 text-xs sm:text-[13px]">
         <p class="leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-lg">
-          Available for technical workflows, autonomous pipelines, and demo production.
+          Open to freelance projects, contracts, and technical collaborations[cite: 5]. Send a direct message or connect via the links below.
         </p>
 
+        <!-- Direct Email & Copy Action -->
         <div class="space-y-3 pt-2">
-          <div class="flex items-center gap-2.5">
-            <i data-lucide="mail" class="w-4 h-4 text-neutral-500"></i>
-            <span class="font-bold tracking-wider uppercase text-neutral-900 dark:text-neutral-100">
-              KHIZERHAYAT.EXE@GMAIL.COM
-            </span>
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="mailto:khizerhayat.exe@gmail.com" class="font-bold tracking-wider uppercase hover:text-blue-500 transition-colors flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-neutral-500"></i>
+              <span>KHIZERHAYAT.EXE@GMAIL.COM</span>
+            </a>
+            <!-- One-Click Copy Button -->
+            <button onclick="copyEmail()" id="copyBtn" class="text-[10px] uppercase font-mono px-2 py-0.5 border border-neutral-300 dark:border-neutral-800 hover:border-blue-500 text-neutral-500 hover:text-blue-500 transition-colors">
+              [COPY]
+            </button>
           </div>
 
           <div class="text-neutral-500 dark:text-neutral-400 tracking-wider uppercase">
@@ -381,25 +461,33 @@
         </div>
       </div>
 
-      <!-- Social Links (neutralized - non-redirecting) -->
+      <!-- Social Links (Redirectable) -->
       <div class="lg:col-span-5 text-xs sm:text-[13px]">
         <div class="text-neutral-500 dark:text-neutral-400 uppercase tracking-widest mb-4">[CONNECT]</div>
-        <div class="space-y-3 uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+        <div class="space-y-3 uppercase tracking-wider">
           <div class="flex items-center gap-2">
             <i data-lucide="linkedin" class="w-4 h-4 text-neutral-500"></i>
-            <span>LINKEDIN (@CREATEDBYKHIZER)</span>
+            <a href="https://www.linkedin.com/in/createdbykhizer/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">
+              LINKEDIN (@CREATEDBYKHIZER)
+            </a>
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="github" class="w-4 h-4 text-neutral-500"></i>
-            <span>GITHUB (@KHIZERLITE)</span>
+            <a href="https://github.com/khizerlite" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">
+              GITHUB (@KHIZERLITE)
+            </a>
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="instagram" class="w-4 h-4 text-neutral-500"></i>
-            <span>INSTAGRAM (@KHIZERCHIVE)</span>
+            <a href="https://www.instagram.com/khizerchive/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">
+              INSTAGRAM (@KHIZERCHIVE)
+            </a>
           </div>
           <div class="flex items-center gap-2">
             <i data-lucide="twitter" class="w-4 h-4 text-neutral-500"></i>
-            <span>TWITTER / X (@KHIZERCHIVE)</span>
+            <a href="https://x.com/khizerchive" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition-colors">
+              TWITTER / X (@KHIZERCHIVE)
+            </a>
           </div>
         </div>
       </div>
@@ -430,6 +518,20 @@
         html.classList.add('dark');
         localStorage.theme = 'dark';
       }
+    }
+
+    // Fast Clipboard Copy Action
+    function copyEmail() {
+      const email = 'khizerhayat.exe@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.innerText = '[COPIED]';
+        btn.classList.add('text-emerald-500', 'border-emerald-500');
+        setTimeout(() => {
+          btn.innerText = '[COPY]';
+          btn.classList.remove('text-emerald-500', 'border-emerald-500');
+        }, 2000);
+      });
     }
   </script>
 
